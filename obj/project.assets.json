@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "BepInEx.BaseLib/5.4.20": {
+      "BepInEx.BaseLib/5.4.21": {
         "type": "package",
         "compile": {
           "lib/net35/BepInEx.dll": {}
@@ -116,13 +116,13 @@
     }
   },
   "libraries": {
-    "BepInEx.BaseLib/5.4.20": {
-      "sha512": "0bXgYxbCEN2Ixp3kiFEhyw+RASeFQeg/ww+lbMt7if6XMeVS60eg6epNsMA8Jbx57dmNOzNevkKKw8mP8SUMqw==",
+    "BepInEx.BaseLib/5.4.21": {
+      "sha512": "IRgoMyJGoBW+uGR0C68L8WeRIMRnyL2RueOUDUTUgom2aiyltaxBkMydjmvkc+f3hZBa6ZLMlEF6bozNORmOyg==",
       "type": "package",
-      "path": "bepinex.baselib/5.4.20",
+      "path": "bepinex.baselib/5.4.21",
       "files": [
         ".nupkg.metadata",
-        "bepinex.baselib.5.4.20.nupkg.sha512",
+        "bepinex.baselib.5.4.21.nupkg.sha512",
         "bepinex.baselib.nuspec",
         "images/icon.png",
         "lib/net35/BepInEx.dll",
@@ -232,6 +232,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
+      "BepInEx.BaseLib >= 5.4.21",
       "BepInEx.Core >= 5.4.21"
     ]
   },
@@ -241,11 +242,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\PassageTracker.csproj",
+      "projectUniqueName": "A:\\slugcats\\PassageTrackers\\src\\PassageTracker.csproj",
       "projectName": "PassageTracker",
-      "projectPath": "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\PassageTracker.csproj",
+      "projectPath": "A:\\slugcats\\PassageTrackers\\src\\PassageTracker.csproj",
       "packagesPath": "C:\\Users\\Doctor Slone\\.nuget\\packages\\",
-      "outputPath": "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\obj\\",
+      "outputPath": "A:\\slugcats\\PassageTrackers\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Doctor Slone\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -282,6 +283,10 @@
       "net48": {
         "targetAlias": "net48",
         "dependencies": {
+          "BepInEx.BaseLib": {
+            "target": "Package",
+            "version": "[5.4.21, )"
+          },
           "BepInEx.Core": {
             "target": "Package",
             "version": "[5.4.21, )"

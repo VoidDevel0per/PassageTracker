@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\PassageTracker.csproj": {}
+    "A:\\slugcats\\PassageTrackers\\src\\PassageTracker.csproj": {}
   },
   "projects": {
-    "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\PassageTracker.csproj": {
+    "A:\\slugcats\\PassageTrackers\\src\\PassageTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\PassageTracker.csproj",
+        "projectUniqueName": "A:\\slugcats\\PassageTrackers\\src\\PassageTracker.csproj",
         "projectName": "PassageTracker",
-        "projectPath": "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\PassageTracker.csproj",
+        "projectPath": "A:\\slugcats\\PassageTrackers\\src\\PassageTracker.csproj",
         "packagesPath": "C:\\Users\\Doctor Slone\\.nuget\\packages\\",
-        "outputPath": "A:\\SteamLibrary\\steamapps\\common\\Rain World\\RainWorld_Data\\StreamingAssets\\mods\\passagetrackers\\src\\obj\\",
+        "outputPath": "A:\\slugcats\\PassageTrackers\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Doctor Slone\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,10 @@
         "net48": {
           "targetAlias": "net48",
           "dependencies": {
+            "BepInEx.BaseLib": {
+              "target": "Package",
+              "version": "[5.4.21, )"
+            },
             "BepInEx.Core": {
               "target": "Package",
               "version": "[5.4.21, )"

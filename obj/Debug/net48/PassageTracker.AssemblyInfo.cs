@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PassageTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52c98fb9fa2bc5f04968e7f2b973bd05938c7aa8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PassageTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PassageTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,10 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using HUD;
 using Menu;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using Color = UnityEngine.Color;
+using Vector2 = UnityEngine.Vector2;
 
 namespace PassageTrackerMod
 {

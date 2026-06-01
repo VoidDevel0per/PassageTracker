@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Numerics;
+using UnityEngine;
 using Menu.Remix.MixedUI;
+using Vector2 = UnityEngine.Vector2;
 
 namespace PassageTrackerMod;
 
