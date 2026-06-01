@@ -1,0 +1,33 @@
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\bin\Debug\net48\PassageTracker.dll
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\bin\Debug\net48\PassageTracker.pdb
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\bin\Debug\net48\Assembly-CSharp.dll
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.csproj.AssemblyReference.cache
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.AssemblyInfoInputs.cache
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.AssemblyInfo.cs
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.csproj.CoreCompileInputs.cache
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.csproj.CopyComplete
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.dll
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\TestMod-master\src\obj\Debug\net48\PassageTracker.pdb
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\bin\Debug\net48\PassageTracker.dll
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\bin\Debug\net48\PassageTracker.pdb
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\bin\Debug\net48\Assembly-CSharp.dll
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.csproj.AssemblyReference.cache
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.AssemblyInfoInputs.cache
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.AssemblyInfo.cs
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.csproj.CoreCompileInputs.cache
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.csproj.CopyComplete
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.dll
+D:\Games\Steam\SteamApps\common\Rain World\RainWorld_Data\StreamingAssets\mods\PassageTracker-master\src\obj\Debug\net48\PassageTracker.pdb
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\bin\Debug\net48\PassageTracker.dll
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\bin\Debug\net48\PassageTracker.pdb
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\bin\Debug\net48\Assembly-CSharp.dll
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.csproj.AssemblyReference.cache
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.GeneratedMSBuildEditorConfig.editorconfig
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.AssemblyInfoInputs.cache
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.AssemblyInfo.cs
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.csproj.CoreCompileInputs.cache
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageT.EE8DAF0A.Up2Date
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.dll
+A:\SteamLibrary\steamapps\workshop\content\312520\3343321869\src\obj\Debug\net48\PassageTracker.pdb
