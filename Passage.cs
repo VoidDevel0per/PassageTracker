@@ -82,7 +82,10 @@ public class Passage
             {
                 if (!regionslept)
                 {
-                    PassageTracker.showWandererAmount = PassageTracker.maxShowBarAmount;
+                    if (PassageTrackerOptions.showHudDisplay.Value)
+                    {
+                        PassageTracker.showWandererAmount = PassageTracker.maxShowBarAmount;
+                    }
                     ShowPassage(WinState.EndgameID.Traveller, bat);
                 }
 
@@ -291,7 +294,7 @@ public class Passage
     public static void OnMapUpdate(On.HUD.Map.orig_Update orig, HUD.Map self)
     {
         orig(self);
-        if ((self.fade > 0f && self.lastFade > 0f))
+        if ((self.fade > 0f && self.lastFade > 0f) && PassageTrackerOptions.showMapTracker.Value)
         {
             PassageTracker.showMapPassageTracker = true;
         }
@@ -338,15 +341,21 @@ public class Passage
 
         if (gameID == WinState.EndgameID.Outlaw || gameID == WinState.EndgameID.Chieftain)
         {
-            PassageTracker.showFloatAmount = PassageTracker.maxShowBarAmount;
-            PassageTracker.floatObject = type;
-            HUDFloatMeter.init = true;
+            if (PassageTrackerOptions.showHudDisplay.Value)
+            {
+                PassageTracker.showFloatAmount = PassageTracker.maxShowBarAmount;
+                PassageTracker.floatObject = type;
+                HUDFloatMeter.init = true;
+            }
             return;
         }
 
-        PassageTracker.showNotchAmount = PassageTracker.maxShowBarAmount;
-        PassageTracker.notchObject = type;
-        HUDNotchMeter.init = true;
+        if (PassageTrackerOptions.showHudDisplay.Value)
+        {
+            PassageTracker.showNotchAmount = PassageTracker.maxShowBarAmount;
+            PassageTracker.notchObject = type;
+            HUDNotchMeter.init = true;
+        }
     }
 
     public static void FailPassage(WinState.EndgameID gameid)
@@ -368,6 +377,9 @@ public class Passage
         {
             PassageTracker.room.PlaySound(sound, 0f, 1f, 1f);
         }
+
+        if (!PassageTrackerOptions.showHudDisplay.Value)
+            return;
 
         PassageTracker.failIcon = new FSprite(gameid.ToString() + "A", true);
         PassageTracker.showFailAmount = 200;
