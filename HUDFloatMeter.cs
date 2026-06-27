@@ -26,7 +26,7 @@ namespace PassageTrackerMod
 
             Vector2 offset = new();
 
-            if(PassageTracker.showNotchAmount > 0)
+            if (PassageTracker.showNotchAmount > 0)
             {
                 offset += new Vector2(-20f, -30f);
             }
@@ -44,7 +44,7 @@ namespace PassageTrackerMod
             }
             catch
             {
-                meterStart = new Vector2(-200, 0); //shhhhhhh don't tell anyone
+                meterStart = new Vector2(-200, 0); // shhhhhhh don't tell anyone
                 meterTip = meterStart;
             }
 
@@ -89,8 +89,8 @@ namespace PassageTrackerMod
                     color = Color.black
                 };
 
-                if(PassageTracker.floatObject.ID == WinState.EndgameID.Outlaw) 
-                { 
+                if (PassageTracker.floatObject.ID == WinState.EndgameID.Outlaw)
+                {
                     WinState.IntegerTracker integerTracker = PassageTracker.floatObject as WinState.IntegerTracker;
                     int currentProgress = PassageTracker.killsThisCycle + integerTracker.progress;
 
@@ -99,7 +99,7 @@ namespace PassageTrackerMod
                         PassageTracker.showFloatAmount = 0;
                         return;
                     }
-                    
+
                     lastFill = Mathf.InverseLerp(integerTracker.showFrom, integerTracker.max, integerTracker.progress);
                     fill = Mathf.InverseLerp(integerTracker.showFrom, integerTracker.max, currentProgress);
 
@@ -128,10 +128,10 @@ namespace PassageTrackerMod
                     {
                     }
                 }
-                else if(PassageTracker.floatObject.ID == WinState.EndgameID.Chieftain)
+                else if (PassageTracker.floatObject.ID == WinState.EndgameID.Chieftain)
                 {
-                    try 
-                    { 
+                    try
+                    {
                         WinState.FloatTracker chieftainTracker = PassageTracker.floatObject as WinState.FloatTracker;
 
                         WinState winState = PassageTracker.room.world.game.rainWorld.progression.currentSaveState.deathPersistentSaveData.winState;
@@ -142,14 +142,14 @@ namespace PassageTrackerMod
 
                         float currentLike = PassageTracker.room.world.game.session.creatureCommunities.LikeOfPlayer(CreatureCommunities.CommunityID.Scavengers, -1, 0);
 
-                        //If num4 isn't inside InverseLerp, take closest (lower -> 0.42, higher -> 0.9)
+                        // If num4 isn't inside InverseLerp, take closest (lower -> 0.42, higher -> 0.9)
                         if (PassageTracker.room.game.StoryCharacter == SlugcatStats.Name.Yellow)
                         {
-                            currentLike = Mathf.InverseLerp(0.42f, 0.9f, currentLike); //between 0.42 and 0.9 : num4
+                            currentLike = Mathf.InverseLerp(0.42f, 0.9f, currentLike); // between 0.42 and 0.9 : num4
                         }
                         else
                         {
-                            currentLike = Mathf.InverseLerp(0.1f, 0.8f, currentLike); //between 0.1 and 0.8 : num4
+                            currentLike = Mathf.InverseLerp(0.1f, 0.8f, currentLike); // between 0.1 and 0.8 : num4
                         }
                         currentLike = Mathf.Floor(currentLike * 20f) / 20f;
 
@@ -232,7 +232,7 @@ namespace PassageTrackerMod
             container.AddChild(icon);
             container.AddChild(meterbg);
             container.AddChild(meter2);
-            container.AddChild(meter);  
+            container.AddChild(meter);
         }
 
         public FSprite meter, meter2, meterbg;

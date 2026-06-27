@@ -7,17 +7,17 @@ namespace PassageTrackerMod;
 
 public class Passage
 {
-    //DragonSlayer+Outlaw
+    // DragonSlayer+Outlaw
     public static void OnAddKill(On.PlayerSessionRecord.orig_AddKill orig, PlayerSessionRecord self, Creature victim)
-	{
-		orig(self, victim);
+    {
+        orig(self, victim);
 
         DragonslayerTracking(self, victim);
 
         if (!(victim.Template.countsAsAKill > 0))
             return;
 
-        //Outlaw
+        // Outlaw
         HUDFloatMeter.init = true;
         PassageTracker.killsThisCycle++;
         WinState winState = PassageTracker.room.world.game.rainWorld.progression.currentSaveState.deathPersistentSaveData.winState;
@@ -25,7 +25,7 @@ public class Passage
         ShowPassage(WinState.EndgameID.Outlaw, outlawTracker);
     }
 
-    //Saint
+    // Saint
     public static void OnBreakPeaceful(On.PlayerSessionRecord.orig_BreakPeaceful orig, PlayerSessionRecord self, Creature victim)
     {
         orig(self, victim);
@@ -39,7 +39,7 @@ public class Passage
         }
     }
 
-    //Hunter/Monk
+    // Hunter/Monk
     public static void OnAddEat(On.PlayerSessionRecord.orig_AddEat orig, PlayerSessionRecord self, PhysicalObject eatenObject)
     {
         orig(self, eatenObject);
@@ -61,9 +61,9 @@ public class Passage
 
         PassageTracker.failedHunter = true;
     }
-    
 
-    //Nomad
+
+    // Nomad
     public static void OnGateRequestsSwitchInitiation(On.OverWorld.orig_GateRequestsSwitchInitiation orig, OverWorld self, RegionGate reportBackToGate)
     {
         orig(self, reportBackToGate);
@@ -71,8 +71,8 @@ public class Passage
         if (self.game.IsArenaSession)
             return;
         WinState winState = self.game.rainWorld.progression.currentSaveState.deathPersistentSaveData.winState;
-        
-        //Wanderer
+
+        // Wanderer
         WinState.BoolArrayTracker bat = winState.GetTracker(WinState.EndgameID.Traveller, true) as WinState.BoolArrayTracker;
         List<string> storyRegions = SlugcatStats.SlugcatStoryRegions(RainWorld.lastActiveSaveSlot);
         int q = 0;
@@ -90,8 +90,8 @@ public class Passage
             }
             q++;
         }
-        
-        //Nomad
+
+        // Nomad
         if (!ModManager.MSC)
             return;
 
@@ -130,11 +130,11 @@ public class Passage
                     ShowPassage(MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad, nomadTracker);
                 }
             }
-            
+
         }
     }
 
-    //DragonSlayer
+    // DragonSlayer
     public static void DragonslayerTracking(PlayerSessionRecord self, Creature victim)
     {
         if (victim.Template.IsLizard)
@@ -143,11 +143,11 @@ public class Passage
 
             if (ModManager.MSC)
             {
-                if(PassageTracker.dragonslayerTracker == null)
+                if (PassageTracker.dragonslayerTracker == null)
                 {
                     WinState.ListTracker listTracker = winState.GetTracker(WinState.EndgameID.DragonSlayer, true) as WinState.ListTracker;
                     PassageTracker.dragonslayerTracker = new WinState.ListTracker(listTracker.ID, listTracker.totItemsToWin);
-                    foreach(int i in listTracker.myLastList)
+                    foreach (int i in listTracker.myLastList)
                     {
                         PassageTracker.dragonslayerTracker.myLastList.Add(i);
                     }
@@ -161,7 +161,7 @@ public class Passage
                     {
                         while (k < WinState.lizardsOrder.Length)
                         {
-                            if (victim.Template.type == WinState.lizardsOrder[k]) //If GreenLizard == GreenLizard
+                            if (victim.Template.type == WinState.lizardsOrder[k]) // If GreenLizard == GreenLizard
                             {
                                 if (PassageTracker.dragonslayerTracker.myLastList[count] == k)
                                 {
@@ -177,26 +177,26 @@ public class Passage
                 {
                     while (k < WinState.lizardsOrder.Length)
                     {
-                        if (victim.Template.type == WinState.lizardsOrder[k]) //If GreenLizard == GreenLizard
+                        if (victim.Template.type == WinState.lizardsOrder[k]) // If GreenLizard == GreenLizard
                             break;
 
                         k++;
                     }
-                } 
+                }
 
                 PassageTracker.dragonslayerTracker.myLastList.Add(k);
 
-                ShowPassage(WinState.EndgameID.DragonSlayer, PassageTracker.dragonslayerTracker); 
+                ShowPassage(WinState.EndgameID.DragonSlayer, PassageTracker.dragonslayerTracker);
             }
             else
             {
-                if(PassageTracker.dragonslayerBATracker == null)
+                if (PassageTracker.dragonslayerBATracker == null)
                 {
                     WinState.BoolArrayTracker bat = winState.GetTracker(WinState.EndgameID.DragonSlayer, true) as WinState.BoolArrayTracker;
 
                     PassageTracker.dragonslayerBATracker = new WinState.BoolArrayTracker(bat.ID, 6);
                     int i = 0;
-                    foreach(bool a in bat.lastShownProgress)
+                    foreach (bool a in bat.lastShownProgress)
                     {
                         PassageTracker.dragonslayerBATracker.lastShownProgress[i] = a;
                         i++;
@@ -208,7 +208,7 @@ public class Passage
                 {
                     if (self.kills[self.kills.Count - 1].symbolData.critType == WinState.lizardsOrder[k])
                     {
-                        if(k < PassageTracker.dragonslayerBATracker.lastShownProgress.Length)
+                        if (k < PassageTracker.dragonslayerBATracker.lastShownProgress.Length)
                         {
                             if (PassageTracker.dragonslayerBATracker.lastShownProgress[k])
                             {
@@ -221,12 +221,12 @@ public class Passage
                 }
                 PassageTracker.dragonslayerBATracker.lastShownProgress[k] = true;
 
-                ShowPassage(WinState.EndgameID.DragonSlayer, PassageTracker.dragonslayerBATracker); //Add a hud element to show we got a pip
+                ShowPassage(WinState.EndgameID.DragonSlayer, PassageTracker.dragonslayerBATracker); // Add a hud element to show we got a pip
             }
         }
     }
 
-    //Chieftain
+    // Chieftain
     public static void OnInfluenceLikeOfPlayer(On.CreatureCommunities.orig_InfluenceLikeOfPlayer orig, CreatureCommunities self, CreatureCommunities.CommunityID commID, int region, int playerNumber, float influence, float interRegionBleed, float interCommunityBleed)
     {
         orig(self, commID, region, playerNumber, influence, interRegionBleed, interCommunityBleed);
@@ -239,7 +239,7 @@ public class Passage
         ShowPassage(WinState.EndgameID.Chieftain, ft);
     }
 
-    //Scholar
+    // Scholar
     public static void OnDataPearlUpdate(On.DataPearl.orig_Update orig, DataPearl self, bool eu)
     {
         if (self.grabbedBy.Count > 0)
@@ -259,7 +259,7 @@ public class Passage
                 {
                     WinState winState = PassageTracker.room.world.game.rainWorld.progression.currentSaveState.deathPersistentSaveData.winState;
 
-                    if(PassageTracker.scholarTracker == null)
+                    if (PassageTracker.scholarTracker == null)
                     {
                         WinState.ListTracker listTracker = winState.GetTracker(WinState.EndgameID.Scholar, true) as WinState.ListTracker;
                         PassageTracker.scholarTracker = new WinState.ListTracker(listTracker.ID, listTracker.totItemsToWin);
@@ -268,8 +268,8 @@ public class Passage
                             PassageTracker.scholarTracker.myLastList.Add(i);
                         }
                     }
-                    
-                    foreach(int i in PassageTracker.scholarTracker.myLastList)
+
+                    foreach (int i in PassageTracker.scholarTracker.myLastList)
                     {
                         if (i == (int)self.AbstractPearl.dataPearlType)
                         {
@@ -287,11 +287,11 @@ public class Passage
         orig(self, eu);
     }
 
-    //Map
+    // Map
     public static void OnMapUpdate(On.HUD.Map.orig_Update orig, HUD.Map self)
     {
         orig(self);
-        if((self.fade > 0f && self.lastFade > 0f))
+        if ((self.fade > 0f && self.lastFade > 0f))
         {
             PassageTracker.showMapPassageTracker = true;
         }
@@ -309,7 +309,7 @@ public class Passage
         WinState winState = PassageTracker.room.world.game.rainWorld.progression.currentSaveState.deathPersistentSaveData.winState;
         WinState.IntegerTracker survivorTracker = winState.GetTracker(WinState.EndgameID.Survivor, true) as WinState.IntegerTracker;
 
-        if(gameID != WinState.EndgameID.Chieftain)
+        if (gameID != WinState.EndgameID.Chieftain)
         {
             if (gameID != MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad)
             {
@@ -323,7 +323,7 @@ public class Passage
             }
         }
 
-        if(gameID == WinState.EndgameID.Outlaw || gameID == WinState.EndgameID.Chieftain)
+        if (gameID == WinState.EndgameID.Outlaw || gameID == WinState.EndgameID.Chieftain)
         {
             if (!survivorTracker.GoalAlreadyFullfilled)
                 return;
@@ -336,7 +336,7 @@ public class Passage
             }
         }
 
-        if(gameID == WinState.EndgameID.Outlaw || gameID == WinState.EndgameID.Chieftain)
+        if (gameID == WinState.EndgameID.Outlaw || gameID == WinState.EndgameID.Chieftain)
         {
             PassageTracker.showFloatAmount = PassageTracker.maxShowBarAmount;
             PassageTracker.floatObject = type;
@@ -346,7 +346,7 @@ public class Passage
 
         PassageTracker.showNotchAmount = PassageTracker.maxShowBarAmount;
         PassageTracker.notchObject = type;
-        HUDNotchMeter.init = true; 
+        HUDNotchMeter.init = true;
     }
 
     public static void FailPassage(WinState.EndgameID gameid)
@@ -364,11 +364,11 @@ public class Passage
 
         SoundID sound = MoreSlugcats.MoreSlugcatsEnums.MSCSoundID.Core_Removed;
 
-        if(PassageTrackerOptions.playFailSound.Value)
+        if (PassageTrackerOptions.playFailSound.Value)
         {
             PassageTracker.room.PlaySound(sound, 0f, 1f, 1f);
         }
-        
+
         PassageTracker.failIcon = new FSprite(gameid.ToString() + "A", true);
         PassageTracker.showFailAmount = 200;
     }

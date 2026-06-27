@@ -15,10 +15,10 @@ namespace PassageTrackerMod;
 [BepInPlugin("com.alexthedragon.passagetracker", "Passage Tracker", "1.0.3")]
 public class PassageTracker : BaseUnityPlugin
 {
-    //Name is WinState.PassageDisplayName()
+    // Name is WinState.PassageDisplayName()
     public void OnEnable()
-    {        
-        //ModInit
+    {
+        // ModInit
         On.RainWorld.OnModsInit += OnModsInit;
     }
 
@@ -29,55 +29,55 @@ public class PassageTracker : BaseUnityPlugin
 
         if (init) return;
 
-        //Get Room
+        // Get Room
         On.Player.Update += OnPlayerUpdate;
-        
+
         On.SlugcatStats.getSlugcatName += SlugcatStatsOngetSlugcatName;
 
-        //Reset Saint/Hunter/Monk Passages at start of cycle
+        // Reset Saint/Hunter/Monk Passages at start of cycle
         On.RainWorldGame.ctor += OnRainWorldGameCtor;
         Logger.LogInfo("Hooked Cycle Start");
 
-        //HUD
+        // HUD
         On.HUD.HUD.InitSinglePlayerHud += SinglePlayerHudInit;
         On.HUD.HUD.InitMultiplayerHud += MultiplayerHudInit;
         Logger.LogInfo("Hooked HUD");
 
-        //DragonSlayer/Outlaw
+        // DragonSlayer/Outlaw
         On.PlayerSessionRecord.AddKill += Passage.OnAddKill;
         Logger.LogInfo("Hooked DragonSlayer+Outlaw");
-        
 
-        //Nomad & Wanderer
+
+        // Nomad & Wanderer
         On.OverWorld.GateRequestsSwitchInitiation += Passage.OnGateRequestsSwitchInitiation;
         Logger.LogInfo("Hooked Nomad and Wanderer");
 
-        //Saint/Outlaw
+        // Saint/Outlaw
         On.PlayerSessionRecord.BreakPeaceful += Passage.OnBreakPeaceful;
         Logger.LogInfo("Hooked Saint+Outlaw");
 
-        //Hunter/Monk
+        // Hunter/Monk
         On.PlayerSessionRecord.AddEat += Passage.OnAddEat;
         Logger.LogInfo("Hooked Hunter+Monk");
 
-        //Chieftain
+        // Chieftain
         On.CreatureCommunities.InfluenceLikeOfPlayer += Passage.OnInfluenceLikeOfPlayer;
         Logger.LogInfo("Hooked Chieftain");
 
-        //Scholar
+        // Scholar
         On.DataPearl.Update += Passage.OnDataPearlUpdate;
         Logger.LogInfo("Hooked Scholar");
 
-        //Map
+        // Map
         On.HUD.Map.Update += Passage.OnMapUpdate;
-        
+
 
 
         Logger.LogInfo("Hooked succesfully.");
 
         MachineConnector.SetRegisteredOI("alexthedragon.passagetracker", PassageTrackerOptions.instance);
 
-        maxShowBarAmount = (int) (PassageTrackerOptions.passageDisplayTime.Value * 40f);
+        maxShowBarAmount = (int)(PassageTrackerOptions.passageDisplayTime.Value * 40f);
         init = true;
     }
 
@@ -140,5 +140,5 @@ public class PassageTracker : BaseUnityPlugin
     public static bool showMapPassageTracker = false;
 
     bool init;
-    //WinState.EndgameID.DragonSlayer
+    // WinState.EndgameID.DragonSlayer
 }

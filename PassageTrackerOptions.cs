@@ -4,7 +4,7 @@ using Menu.Remix.MixedUI;
 namespace PassageTrackerMod;
 
 public class PassageTrackerOptions : OptionInterface
-{    
+{
     public override void Initialize()
     {
         base.Initialize();
@@ -16,7 +16,7 @@ public class PassageTrackerOptions : OptionInterface
         Vector2 vector = new Vector2(25f, 600f);
         vector.y -= 30f;
 
-        //Passage sound
+        // Passage sound
         OpCheckBox opCheckBox = new OpCheckBox(playPassageSound, vector)
         {
             description = playPassageSound.info.description
@@ -34,7 +34,7 @@ public class PassageTrackerOptions : OptionInterface
 
         vector.y -= 30f;
 
-        //Failure sound
+        // Failure sound
         opCheckBox = new OpCheckBox(playFailSound, vector)
         {
             description = playFailSound.info.description
@@ -52,7 +52,7 @@ public class PassageTrackerOptions : OptionInterface
 
         vector.y -= 40f;
 
-        //Display time
+        // Display time
         OpUpdown opUpdown = new OpUpdown(passageDisplayTime, vector, 70f, 1)
         {
             description = passageDisplayTime.info.description
@@ -68,9 +68,9 @@ public class PassageTrackerOptions : OptionInterface
         });
 
 
-        //vector.y -= 40f;
+        // vector.y -= 40f;
 
-        //OpRadioButtonGroup opRadioButtonGroup = new OpRadioButtonGroup(passageDisplayTime)
+        // OpRadioButtonGroup opRadioButtonGroup = new OpRadioButtonGroup(passageDisplayTime)
 
     }
 

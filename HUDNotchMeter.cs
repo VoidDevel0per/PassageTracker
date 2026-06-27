@@ -40,7 +40,7 @@ namespace PassageTrackerMod
             }
             catch
             {
-                pos = new Vector2(-200, 0); //shhhhhhh don't tell anyone
+                pos = new Vector2(-200, 0); // shhhhhhh don't tell anyone
             }
 
 
@@ -62,8 +62,8 @@ namespace PassageTrackerMod
                 }
                 init = false;
 
-                if(PassageTracker.notchObject is WinState.ListTracker)
-                { 
+                if (PassageTracker.notchObject is WinState.ListTracker)
+                {
                     WinState.ListTracker listTracker = (WinState.ListTracker)PassageTracker.notchObject;
                     fsprite = new FSprite[listTracker.totItemsToWin, 4];
                 }
@@ -113,14 +113,14 @@ namespace PassageTrackerMod
                     {
                         WinState.BoolArrayTracker boolArrayTracker = (WinState.BoolArrayTracker)PassageTracker.notchObject;
                         customColors = new Color[boolArrayTracker.progress.Length];
-                        
+
                         for (int k = 0; k < customColors.Length; k++)
                         {
                             customColors[k] = (StaticWorld.GetCreatureTemplate(WinState.lizardsOrder[k]).breedParameters as LizardBreedParams).standardColor;
                         }
                     }
                 }
-                else if(PassageTracker.notchObject.ID == WinState.EndgameID.Traveller)
+                else if (PassageTracker.notchObject.ID == WinState.EndgameID.Traveller)
                 {
                     WinState.BoolArrayTracker boolArrayTracker = (WinState.BoolArrayTracker)PassageTracker.notchObject;
                     customColors = new Color[boolArrayTracker.progress.Length];
@@ -129,7 +129,7 @@ namespace PassageTrackerMod
                         customColors[m] = Region.RegionColor(SlugcatStats.SlugcatStoryRegions(RainWorld.lastActiveSaveSlot)[m]);
                     }
                 }
-                else if(PassageTracker.notchObject.ID == MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad)
+                else if (PassageTracker.notchObject.ID == MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad)
                 {
                     WinState.ListTracker listTracker = (WinState.ListTracker)PassageTracker.notchObject;
                     customColors = new Color[listTracker.totItemsToWin];
@@ -148,9 +148,9 @@ namespace PassageTrackerMod
                                 customColors[num2] = Color.black;
                             }
                         }
-                    }                    
+                    }
                 }
-                else if(PassageTracker.notchObject.ID == WinState.EndgameID.Scholar)
+                else if (PassageTracker.notchObject.ID == WinState.EndgameID.Scholar)
                 {
                     WinState.ListTracker listTracker = (WinState.ListTracker)PassageTracker.notchObject;
                     customColors = new Color[listTracker.totItemsToWin];
@@ -196,7 +196,7 @@ namespace PassageTrackerMod
         public override void Draw(float timeStacker)
         {
             Vector2 position = pos;
-            if(PassageTracker.showFailAmount > 0)
+            if (PassageTracker.showFailAmount > 0)
             {
                 PassageTracker.showFailAmount--;
 
@@ -206,7 +206,7 @@ namespace PassageTrackerMod
 
                 PassageTracker.failIcon.SetPosition(position.x - 20f, position.y + 20f);
 
-                if(PassageTracker.showWandererAmount > 0)
+                if (PassageTracker.showWandererAmount > 0)
                     position.x += 10f;
 
                 container.AddChild(PassageTracker.failIcon);
@@ -216,7 +216,7 @@ namespace PassageTrackerMod
 
             if (PassageTracker.showWandererAmount > 0)
             {
-                if(PassageTracker.notchObject.ID != WinState.EndgameID.Traveller)
+                if (PassageTracker.notchObject.ID != WinState.EndgameID.Traveller)
                 {
                     travellerIcon.SetPosition(position.x - 10f, position.y + 20f);
                     position.x += 10f;
@@ -229,7 +229,7 @@ namespace PassageTrackerMod
                     return;
                 }
             }
-            
+
             if (PassageTracker.notchObject is WinState.ListTracker)
             {
                 for (int i = 0; i < fsprite.GetLength(0); i++)
@@ -270,14 +270,14 @@ namespace PassageTrackerMod
                     container.AddChild(fsprite[i, 3]);
                 }
             }
-            else //IntegerTracker
+            else // IntegerTracker
             {
                 Debug.Log("PassageTracker: Notch IntegerTracker UNUSED!!!");
             }
 
             position.y = pos.y + ((fsprite.GetLength(0) + 1) * 10f);
-            
-            
+
+
             icon.SetPosition(position);
             container.AddChild(icon);
         }
