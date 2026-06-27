@@ -12,7 +12,7 @@ using UnityEngine;
 namespace PassageTrackerMod;
 
 
-[BepInPlugin("com.alexthedragon.passagetracker", "Passage Tracker", "1.0.3")]
+[BepInPlugin("com.alexthedragon.passagetracker", "Passage Tracker Updated", "1.1.0")]
 public class PassageTracker : BaseUnityPlugin
 {
     // Name is WinState.PassageDisplayName()
@@ -75,7 +75,7 @@ public class PassageTracker : BaseUnityPlugin
 
         Logger.LogInfo("Hooked succesfully.");
 
-        MachineConnector.SetRegisteredOI("alexthedragon.passagetracker", PassageTrackerOptions.instance);
+        MachineConnector.SetRegisteredOI("voiddeveloper.passagetracker", PassageTrackerOptions.instance);
 
         maxShowBarAmount = (int)(PassageTrackerOptions.passageDisplayTime.Value * 40f);
         init = true;
