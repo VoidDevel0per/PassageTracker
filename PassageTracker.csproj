@@ -6,43 +6,39 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="..\lib\Assembly-CSharp-firstpass.dll">
+    <Reference Include="lib/Assembly-CSharp-firstpass.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\BepInEx.dll">
+    <Reference Include="lib/BepInEx.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\HOOKS-Assembly-CSharp.dll">
+    <Reference Include="lib/HOOKS-Assembly-CSharp.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\Mono.Cecil.dll">
+    <Reference Include="lib/Mono.Cecil.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\Mono.Cecil.Rocks.dll">
+    <Reference Include="lib/Mono.Cecil.Rocks.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\MonoMod.dll">
+    <Reference Include="lib/MonoMod.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\MonoMod.RuntimeDetour.dll">
+    <Reference Include="lib/MonoMod.RuntimeDetour.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\MonoMod.Utils.dll">
+    <Reference Include="lib/MonoMod.Utils.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\UnityEngine.CoreModule.dll">
+    <Reference Include="lib/UnityEngine.CoreModule.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="..\lib\UnityEngine.dll">
+    <Reference Include="lib/UnityEngine.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="lib/Assembly-CSharp.dll">
+      <Private>false</Private>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="Exists('$(RainWorldDir)')">
