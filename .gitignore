@@ -1,4 +1,11 @@
 bin/
 obj/
 lib/
+
+# IDE
+.idea/
+.vs/
+.vscode/
+*.DotSettings
 *.DotSettings.user
+*.sln.DotSettings.user
