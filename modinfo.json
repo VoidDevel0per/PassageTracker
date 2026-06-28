@@ -1,0 +1,14 @@
+{
+  "id": "voiddeveloper.passagetracker",
+  "name": "Passage Tracker Updated",
+  "version": "1.1.0",
+  "authors": "Alex The Dragon, VoidDeveloper, zohnannor",
+  "description": "Adds a passage tracker to the ingame map, This mod has been updated by VoidDeveloper, it SHOULD work with the most latest version! alas the original code was written by Alex The Dragon.",
+  "tags": [
+    "Game Mechanics",
+    "Accessibility",
+    "Downpour",
+    "Base"
+  ],
+  "checksum_override_version": false
+}

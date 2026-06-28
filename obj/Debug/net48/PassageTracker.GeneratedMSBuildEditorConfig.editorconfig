@@ -1,8 +1,0 @@
-is_global = true
-build_property.RootNamespace = PassageTracker
-build_property.ProjectDir = A:\SteamLibrary\steamapps\common\Rain World\RainWorld_Data\StreamingAssets\mods\passagetrackers\src\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.CsWinRTUseWindowsUIXamlProjections = false
-build_property.EffectiveAnalysisLevelStyle = 
-build_property.EnableCodeStyleSeverity = 
