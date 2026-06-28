@@ -19,9 +19,9 @@ namespace PassageTrackerMod
         public MapPassageTracker(HUD.HUD hud, FContainer container) : base(hud)
         {
             this.container = container;
-            //screenSize = hud.rainWorld.options.ScreenSize;
+            // screenSize = hud.rainWorld.options.ScreenSize;
 
-            if(ModManager.MSC)
+            if (ModManager.MSC)
             {
                 multiplier = new Vector2(0.75f, 0.98f);
             }
@@ -39,21 +39,21 @@ namespace PassageTrackerMod
                 return;
             }
 
-            //WinState.EndgameID.Survivor;
-            //WinState.EndgameID.Monk; //Survivor
-            //WinState.EndgameID.Hunter; //Survivor
-            //WinState.EndgameID.Saint; //Survivor
-            //WinState.EndgameID.Outlaw; //Survivor
-            //WinState.EndgameID.Chieftain; //Survivor* (Scavenger rep viewed seperately)
-            //WinState.EndgameID.Traveller; //Passage progress w/o survivor
-            //WinState.EndgameID.DragonSlayer; //Passage progress w/o survivor
-            //WinState.EndgameID.Friend; //Passage progress w/o survivor
-            //WinState.EndgameID.Scholar; //The Mark + Moon or other thingies
+            // WinState.EndgameID.Survivor;
+            // WinState.EndgameID.Monk; // Survivor
+            // WinState.EndgameID.Hunter; // Survivor
+            // WinState.EndgameID.Saint; // Survivor
+            // WinState.EndgameID.Outlaw; // Survivor
+            // WinState.EndgameID.Chieftain; // Survivor* (Scavenger rep viewed seperately)
+            // WinState.EndgameID.Traveller; // Passage progress w/o survivor
+            // WinState.EndgameID.DragonSlayer; // Passage progress w/o survivor
+            // WinState.EndgameID.Friend; // Passage progress w/o survivor
+            // WinState.EndgameID.Scholar; // The Mark + Moon or other thingies
 
-            //MoreSlugcats.MoreSlugcatsEnums.EndgameID.Martyr; //Passage progress w/o survivor
-            //MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad; //Survivor
-            //MoreSlugcats.MoreSlugcatsEnums.EndgameID.Pilgrim; //Passage progress w/o survivor
-            //MoreSlugcats.MoreSlugcatsEnums.EndgameID.Mother; //Passage progress w/o survivor
+            // MoreSlugcats.MoreSlugcatsEnums.EndgameID.Martyr; // Passage progress w/o survivor
+            // MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad; // Survivor
+            // MoreSlugcats.MoreSlugcatsEnums.EndgameID.Pilgrim; // Passage progress w/o survivor
+            // MoreSlugcats.MoreSlugcatsEnums.EndgameID.Mother; // Passage progress w/o survivor
         }
 
         public override void Draw(float timeStacker)
@@ -64,23 +64,23 @@ namespace PassageTrackerMod
                 {
                     if (!init)
                     {
-                        //container.RemoveAllChildren();
+                        // container.RemoveAllChildren();
                         int count = 0;
-                        while(count < container.GetChildCount())
+                        while (count < container.GetChildCount())
                         {
                             FNode child = container.GetChildAt(count);
                             if (child is FSprite fsprite)
                             {
                                 if (fsprite.element.name == elementName && fsprite.y > 200f)
                                 {
-                                    container.RemoveChild(fsprite); count--;                                    
+                                    container.RemoveChild(fsprite); count--;
                                 }
                             }
                             count++;
-                        }                        
+                        }
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                 }
                 init = true;
@@ -88,10 +88,10 @@ namespace PassageTrackerMod
                 return;
             }
 
-            //container.AddChild(ceil);
-            //container.AddChild(floor);
-            //container.AddChild(lWall);
-            //container.AddChild(rWall);
+            // container.AddChild(ceil);
+            // container.AddChild(floor);
+            // container.AddChild(lWall);
+            // container.AddChild(rWall);
 
             #region passagesContained
 
@@ -109,11 +109,11 @@ namespace PassageTrackerMod
                 for (int trackerNumber = 0; trackerNumber < 14; trackerNumber++) //<14 before
                 {
                     endgameTracker = winState.GetTracker(endgameID, true);
-                    if(endgameID == WinState.EndgameID.DragonSlayer)
+                    if (endgameID == WinState.EndgameID.DragonSlayer)
                     {
                         if (ModManager.MSC)
                         {
-                            if(PassageTracker.dragonslayerTracker != null)
+                            if (PassageTracker.dragonslayerTracker != null)
                             {
                                 endgameTracker = PassageTracker.dragonslayerTracker;
                             }
@@ -163,12 +163,12 @@ namespace PassageTrackerMod
                         for (int i = 0; i < notchSprites.GetLength(0); i++)
                         {
                             notchSprites[i, 0] = new FSprite("JetFishEyeA", true);
-                            notchSprites[i, 1] = new FSprite("haloGlyph-1", true);                             
+                            notchSprites[i, 1] = new FSprite("haloGlyph-1", true);
                             notchSprites[i, 2] = new FSprite("haloGlyph-1", true);
                             notchSprites[i, 3] = new FSprite("Futile_White", true);
                             notchSprites[i, 3].shader = PassageTracker.room.game.rainWorld.Shaders["FlatLight"];
 
-                            for(int j = 0; j < 4; j++)
+                            for (int j = 0; j < 4; j++)
                             {
                                 notchSprites[i, j].element.name = elementName;
                             }
@@ -246,7 +246,7 @@ namespace PassageTrackerMod
                                         customColors[num2] = Color.black;
                                     }
                                 }
-                                
+
                             }
                             else if (endgameID == WinState.EndgameID.Scholar)
                             {
@@ -269,11 +269,11 @@ namespace PassageTrackerMod
                                     }
                                     else
                                     {
-                                        customColors[l] = color; 
+                                        customColors[l] = color;
                                     }
                                     customColors[l] = RWCustom.Custom.Saturate(customColors[l], 0.2f);
                                 }
-                                for(int i = scholarTracker.myLastList.Count; i < scholarTracker.totItemsToWin; i++)
+                                for (int i = scholarTracker.myLastList.Count; i < scholarTracker.totItemsToWin; i++)
                                 {
                                     customColors[i] = Color.black;
                                 }
@@ -297,7 +297,7 @@ namespace PassageTrackerMod
                                         customColors[n] = Color.black;
                                     }
                                 }
-                            } 
+                            }
                             else if (endgameID == WinState.EndgameID.Survivor)
                             {
                                 int i = 0;
@@ -316,7 +316,7 @@ namespace PassageTrackerMod
                         }
                     }
                     else
-                    {                        
+                    {
 
                     }
 
@@ -330,8 +330,8 @@ namespace PassageTrackerMod
 
                     position.y -= 10f;
 
-                    if (notch) 
-                    { 
+                    if (notch)
+                    {
                         for (int i = 0; i < notchSprites.GetLength(0); i++)
                         {
                             position.y -= 10f;
@@ -356,7 +356,7 @@ namespace PassageTrackerMod
                         position.y -= 5f;
                         meterTip = position;
                         meterStart = meterTip - new Vector2(0, 50f);
-                            
+
                         meter = new FSprite("pixel", true)
                         {
                             scaleX = 2f,
@@ -422,7 +422,7 @@ namespace PassageTrackerMod
 
                                 float currentLike = PassageTracker.room.world.game.session.creatureCommunities.LikeOfPlayer(CreatureCommunities.CommunityID.Scavengers, -1, 0);
 
-                                //If num4 isn't inside InverseLerp, take closest (lower -> 0.42, higher -> 0.9)
+                                // If num4 isn't inside InverseLerp, take closest (lower -> 0.42, higher -> 0.9)
                                 if (PassageTracker.room.game.StoryCharacter == SlugcatStats.Name.Yellow)
                                 {
                                     currentLike = Mathf.InverseLerp(0.42f, 0.9f, currentLike);
@@ -591,50 +591,50 @@ namespace PassageTrackerMod
 
                     switch (trackerNumber)
                     {
-                        //WinState.EndgameID.Survivor; //Always [Notch]
+                        // WinState.EndgameID.Survivor; // Always [Notch]
                         case 0:
-                            endgameID = WinState.EndgameID.Monk; //Survivor [FLOAT]
+                            endgameID = WinState.EndgameID.Monk; // Survivor [FLOAT]
                             break;
                         case 1:
-                            endgameID = WinState.EndgameID.Hunter; //Survivor [FLOAT]
+                            endgameID = WinState.EndgameID.Hunter; // Survivor [FLOAT]
                             break;
                         case 2:
-                            endgameID = WinState.EndgameID.Saint; //Survivor [FLOAT]
+                            endgameID = WinState.EndgameID.Saint; // Survivor [FLOAT]
                             break;
                         case 3:
-                            endgameID = WinState.EndgameID.Outlaw; //Survivor [FLOAT]
+                            endgameID = WinState.EndgameID.Outlaw; // Survivor [FLOAT]
                             break;
                         case 4:
-                            endgameID = WinState.EndgameID.Chieftain; //Survivor* (Scavenger rep viewed seperately) [FLOAT]
+                            endgameID = WinState.EndgameID.Chieftain; // Survivor* (Scavenger rep viewed seperately) [FLOAT]
                             break;
                         case 5:
-                            endgameID = WinState.EndgameID.Traveller; //Passage progress w/o survivor [Notch]
+                            endgameID = WinState.EndgameID.Traveller; // Passage progress w/o survivor [Notch]
                             notch = true;
                             break;
                         case 6:
-                            endgameID = WinState.EndgameID.DragonSlayer; //Passage progress w/o survivor [Notch]
+                            endgameID = WinState.EndgameID.DragonSlayer; // Passage progress w/o survivor [Notch]
                             notch = true;
                             break;
                         case 7:
-                            endgameID = WinState.EndgameID.Friend; //Passage progress w/o survivor [Float]
+                            endgameID = WinState.EndgameID.Friend; // Passage progress w/o survivor [Float]
                             break;
                         case 8:
-                            endgameID = WinState.EndgameID.Scholar; //The Mark + Moon or other thingies [Notch]
+                            endgameID = WinState.EndgameID.Scholar; // The Mark + Moon or other thingies [Notch]
                             notch = true;
                             break;
                         case 9:
-                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Martyr; //Passage progress w/o survivor [Float]
+                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Martyr; // Passage progress w/o survivor [Float]
                             break;
                         case 10:
-                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad; //Survivor [Notch]
+                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Nomad; // Survivor [Notch]
                             notch = true;
                             break;
                         case 11:
-                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Pilgrim; //Passage progress w/o survivor [Notch]
+                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Pilgrim; // Passage progress w/o survivor [Notch]
                             notch = true;
                             break;
                         case 12:
-                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Mother; //Passage progress w/o survivor [FLOAT]
+                            endgameID = MoreSlugcats.MoreSlugcatsEnums.EndgameID.Mother; // Passage progress w/o survivor [FLOAT]
                             break;
                         case 13:
 
@@ -647,9 +647,9 @@ namespace PassageTrackerMod
                     }
                 }
 
-               
+
             }
-           
+
             #endregion passagesContained
         }
 
