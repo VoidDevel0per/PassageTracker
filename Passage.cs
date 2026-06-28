@@ -298,48 +298,16 @@ public class Passage
     public static void OnMapUpdate(On.HUD.Map.orig_Update orig, HUD.Map self)
     {
         orig(self);
-        if (!PassageTrackerOptions.showMapTracker.Value)
+        if ((self.fade > 0f && self.lastFade > 0f) && PassageTrackerOptions.showMapTracker.Value)
+        {
+            PassageTracker.showMapPassageTracker = true;
+        }
+        else
         {
             PassageTracker.showMapPassageTracker = false;
-            return;
         }
-
-        var mapVisible = self.fade > 0f && self.lastFade > 0f;
-
-        if (!mapVisible)
-        {
-            mapVisible = IsInventoryShowingMap();
-        }
-
-        PassageTracker.showMapPassageTracker = mapVisible;
-
     }
 
-    private static bool IsInventoryShowingMap()
-    {
-        if (PassageTracker.room?.game?.cameras?[0]?.hud == null)
-            return false;
-        var hud = PassageTracker.room.game.cameras[0].hud;
-        foreach (var part in hud.parts)
-        {
-            var typeName = part.GetType().Name;
-            if (typeName == "GridInventory" || typeName == "RadialInventory")
-            {
-                if (!inventoryShowMapFieldSearched)
-                {
-                    inventoryShowmapField = part.GetType().BaseType?.GetField("showMap", BindingFlags.Public | BindingFlags.Instance);
-                    inventoryShowMapFieldSearched = true;
-                }
-
-                if (inventoryShowmapField != null)
-                {
-                    return (bool)inventoryShowmapField.GetValue(part);
-                }
-            }
-        }
-        return false;
-
-    }
 
     public static void ShowPassage(WinState.EndgameID gameID, WinState.EndgameTracker type)
     {
