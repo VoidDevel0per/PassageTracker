@@ -100,6 +100,8 @@ public class PassageTracker : BaseUnityPlugin
         scholarTracker = null;
         dragonslayerTracker = null;
         dragonslayerBATracker = null;
+        Passage.inventoryShowmapField = null;
+        Passage.inventoryShowMapFieldSearched = false;
         orig(self, manager);
     }
 
